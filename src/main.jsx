@@ -5,7 +5,7 @@ import "./styles/app.scss";
 import { createContext } from "react";
 // http://localhost:5000/
 // https://mern-todo-backend-r7dn.onrender.com
-export const server = "http://localhost:5000//api/v1";
+export const server = "http://localhost:5000/api/v1";
 
 export const Context = createContext({ isAuthenticated: false });
 
