@@ -5,8 +5,13 @@ import { Link, Navigate } from "react-router-dom";
 import { Context, server } from "../main";
 
 const Login = () => {
-  const { isAuthenticated, setIsAuthenticated, loading, setLoading } =
-    useContext(Context);
+  const {
+    isAuthenticated,
+    setIsAuthenticated,
+    loading,
+    setLoading,
+    setloginredirect,
+  } = useContext(Context);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -31,6 +36,7 @@ const Login = () => {
 
       toast.success(data.message);
       setIsAuthenticated(true);
+      setloginredirect(true);
       setLoading(false);
     } catch (error) {
       toast.error(error.response.data.message);

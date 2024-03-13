@@ -8,7 +8,7 @@ const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { isAuthenticated, setIsAuthenticated, loading, setLoading } =
+  const { isAuthenticated, setIsAuthenticated, setloginredirect, setLoading } =
     useContext(Context);
 
   const submitHandler = async e => {
@@ -33,6 +33,7 @@ const Register = () => {
       toast.success(data.message);
       setIsAuthenticated(true);
       setLoading(false);
+      setloginredirect(true);
     } catch (error) {
       toast.error(error.response.data.message);
       setIsAuthenticated(false);
