@@ -10,13 +10,8 @@ import axios from "axios";
 import { Context, server } from "./main";
 
 function App() {
-  const {
-    setUser,
-    setIsAuthenticated,
-    setLoading,
-    setloginredirect,
-    loginredirect,
-  } = useContext(Context);
+  const { setUser, setIsAuthenticated, setLoading, loginredirect } =
+    useContext(Context);
 
   useEffect(() => {
     setLoading(true);
