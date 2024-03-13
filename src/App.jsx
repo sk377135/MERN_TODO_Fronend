@@ -10,8 +10,7 @@ import axios from "axios";
 import { Context, server } from "./main";
 
 function App() {
-  const { loading, isAuthenticated, setUser, setIsAuthenticated, setLoading } =
-    useContext(Context);
+  const { user, setUser, setIsAuthenticated, setLoading } = useContext(Context);
 
   useEffect(() => {
     setLoading(true);
@@ -38,7 +37,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/Register" element={<Register />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
       <Toaster />
     </Router>

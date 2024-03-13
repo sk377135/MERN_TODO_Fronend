@@ -3,11 +3,10 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./styles/app.scss";
 import { createContext } from "react";
-// http://localhost:5000/
-// https://mern-todo-backend-r7dn.onrender.com
-export const server = "http://localhost:5000/api/v1";
 
-export const Context = createContext({ isAuthenticated: false });
+export const server = "https://mern-todo-backend-r7dn.onrender.com/api/v1";
+
+export const Context = createContext({ isAuthenticated: true });
 
 const AppWrapper = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);

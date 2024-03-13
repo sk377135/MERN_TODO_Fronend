@@ -11,9 +11,7 @@ const Home = () => {
   const [loading, setLoading] = useState(false);
   const [tasks, setTasks] = useState([]);
   const [refresh, setRefresh] = useState(false);
-
   const { isAuthenticated } = useContext(Context);
-
   const updateHandler = async id => {
     try {
       const { data } = await axios.put(
@@ -81,7 +79,6 @@ const Home = () => {
         setTasks(res.data.myTask);
       })
       .catch(e => {
-        console.log("error fetching:", e);
         toast.error(e.response.data.message);
       });
   }, [refresh]);
